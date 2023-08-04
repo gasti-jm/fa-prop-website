@@ -20,7 +20,7 @@
   </head>
 
   <body>
-    <header th:replace="layouts/header :: header"/>
+    <header th:replace="~{layouts/header :: header}"/>
 
     <section>
       <h1>Sobre nosotros</h1>
@@ -52,7 +52,7 @@
       </div>
     </section>
 
-    <a th:replace="layouts/whatsapp :: wsp"/>
-    <footer th:replace="layouts/footer :: footer"/>
+    <a th:replace="~{layouts/whatsapp :: wsp}"/>
+    <footer th:replace="~{layouts/footer :: footer}"/>
   </body>
 </html>

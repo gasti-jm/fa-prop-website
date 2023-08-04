@@ -19,7 +19,7 @@
     </head>
 
     <body>
-        <header th:replace="layouts/header :: header"/>
+        <header th:replace="~{layouts/header :: header}"/>
 
         <section th:if="${inmuebles != null and !inmuebles.empty}">
             <div th:each="inmueble: ${inmuebles}">
@@ -80,12 +80,7 @@
             </div>
         </section>
 
-        <a th:replace="layouts/whatsapp :: wsp"/>
-
-        <!-- FOOTER -->
-        <footer>
-            <p>CopyRight © 2023 by Fabiana Albanese Propiedades - C.S.I 43108</p>
-        </footer>
-        
+        <a th:replace="~{layouts/whatsapp :: wsp}"/>
+        <footer th:replace="~{layouts/footer :: footer}"/>
     </body>
 </html>

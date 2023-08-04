@@ -21,7 +21,7 @@
     </head>
 
     <body>
-        <header th:replace="layouts/header :: header"/>
+    <header th:replace="~{layouts/header :: header}"/>
 
         <section th:if="${inmueble != null and files > 0}">
             <div class="img-container">
@@ -96,7 +96,7 @@
             </div>
         </section>
 
-        <footer th:replace="layouts/footer :: footer"/>
+        <footer th:replace="~{layouts/footer :: footer}"/>
         <script src="/js/image-viewer.js"></script>
     </body>
 </html>

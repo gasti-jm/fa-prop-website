@@ -79,7 +79,6 @@ class InitialController {
 
     fun contFiles(rutaDirectorio: String): Int {
         val directorio = File(Paths.get("").toAbsolutePath().toString() + "/" + rutaDirectorio)
-        println(directorio)
 
         if (!directorio.isDirectory) {
             System.err.println("La ruta proporcionada no es un directorio válido.")

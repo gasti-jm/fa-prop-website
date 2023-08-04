@@ -21,7 +21,7 @@
     </head>
 
     <body>
-        <header th:replace="layouts/header :: header"/>
+        <header th:replace="~{layouts/header :: header}"/>
 
         <!-- BIG LOGO -->
         <div class="background">
@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <a th:replace="layouts/whatsapp :: wsp"/>
+        <a th:replace="~{layouts/whatsapp :: wsp}"/>
 
         <section>
             <h1>Destacados</h1>
@@ -56,6 +56,6 @@
 
         </section>
 
-        <footer th:replace="layouts/footer :: footer"/>
+        <footer th:replace="~{layouts/footer :: footer}"/>
     </body>
 </html>
