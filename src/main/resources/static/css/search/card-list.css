@@ -1,0 +1,161 @@
+section {
+    margin: 15px 30px;
+}
+
+section > h1 {
+    text-align: center;
+    color: rgb(25, 38, 99);
+    font-size: 2em;
+    padding:  0px 0px 30px 0px;
+}
+
+@media screen and (min-width: 900px)  {
+    .card {
+        position: relative;
+        text-decoration: none;
+        color: black;
+        display: block;
+        margin: 20px auto;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    .card-orientation {
+        display: flex;
+        align-self: center;
+        flex-direction: row;
+    }
+
+    .img-container {
+        width: 350px;
+    }
+
+    .img-container > img {
+        display: block;
+        width: 350px;
+        height: 230px;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .info {
+        padding: 20px;
+        width: 80%;
+        overflow: hidden;
+    }
+
+    .info > h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .location-color {
+        color: gray;
+    }
+
+    .info > p {
+        margin: 10px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .info > h4 {
+        display: block;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 24px;
+        margin: 0;
+        margin-top: 20px;
+    }
+
+    .info > p > i {
+        display: inline-block;
+        padding: 10px;
+        font-family: sans-serif;
+        font-style: normal;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    .card {
+        position: relative;
+        text-decoration: none;
+        color: black;
+        display: block;
+        margin: 20px auto;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    .card-orientation {
+        display: flex;
+        align-self: center;
+        flex-direction: column;
+    }
+
+    .img-container {
+        width: 100%;
+    }
+
+    .img-container > img {
+        display: block;
+        width: 100%;
+        border-radius: 10px 0px 0px 0px;
+    }
+
+    .info {
+        padding: 20px;
+        width: 80%;
+        overflow: hidden;
+    }
+
+    .info > h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .location-color {
+        color: gray;
+    }
+
+    .info > p {
+        margin: 10px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .info > h4 {
+        display: block;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 24px;
+        margin: 0;
+        margin-top: 20px;
+    }
+
+    .info > p > i {
+        display: inline-block;
+        padding: 10px;
+        font-family: sans-serif;
+        font-style: normal;
+    }
+
+}

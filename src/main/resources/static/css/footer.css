@@ -1,0 +1,16 @@
+footer {
+    background-color: rgb(25, 38, 99);
+}
+
+footer > p {
+    text-align: center;
+    color: white;
+    padding: 30px 0px;
+    font-size: 1.2em;
+}
+
+@media screen and (max-width: 600px) {
+    footer > p {
+        font-size: medium;
+    }
+}

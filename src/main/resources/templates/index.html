@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/index/backgroundEff.css">
+        <link rel="stylesheet" href="css/index/featured.css">
+        <link rel="stylesheet" href="css/whatsapp.css">
+
+        <link rel="icon" href="img/faicon.ico">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        
+        <script src="js/responsive-manager.js"></script>
+
+        <title>Inicio - Fabiana Albanese Propiedades</title>
+    </head>
+
+    <body>
+        <header th:replace="layouts/header :: header"/>
+
+        <!-- BIG LOGO -->
+        <div class="background">
+            <div class="background-effect">
+                <div class="presentation-container">
+                    <div class="big_logo">
+                        <img src="img/biglogo.png" alt="FA-Prop Logo">
+                    </div>
+
+                    <h1 class="text-img">Somos una inmobiliaria con 32 años de trayectoria</h1>
+                    <h2 class="text-img h2">¡Bienvenidos a nuestra página oficial!</h2>
+                    <h2 class="text-img h2">Pueden contactarse con nosotros al 11 5379-0135</h2>
+                </div>
+            </div>
+        </div>
+
+        <a th:replace="layouts/whatsapp :: wsp"/>
+
+        <section>
+            <h1>Destacados</h1>
+            
+            <div class="featured-container" th:if="${destacados != null and !destacados.empty}">
+                <a th:href="@{'/publicacion/' + ${destacado.idPublication}}" class="card" th:each="destacado: ${destacados}">
+                    <img th:src="@{'img/publications/' + ${destacado.idPublication} + '/1.jpg'}" alt="destacado" style="width:100%"/>
+                    <div class="container">
+                        <h4><b th:text="${destacado.title}"></b></h4>
+                        <p th:text="${destacado.description}"></p>
+                    </div>
+                </a>
+                
+            </div>
+
+        </section>
+
+        <footer th:replace="layouts/footer :: footer"/>
+    </body>
+</html>

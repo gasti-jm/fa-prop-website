@@ -1,0 +1,62 @@
+.background{
+    height: 100vh;
+    background-image: url("/img/casa.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.background-effect {
+    height: 100vh;
+    background-color: rgba(20, 27, 71, 0.70);
+}
+
+.presentation-container {
+    height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-img{
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+.text-img.h2{
+    font-weight: lighter;
+    text-shadow: 2px 2px 2px black;
+}
+
+
+.big_logo{
+    width: 60%;
+    padding-bottom: 10px;
+}
+
+.big_logo > img{
+    width: 100%;
+}
+
+
+@media screen and (max-width: 600px) {
+    .big_logo {
+        width: 90%
+    }
+
+    .big_logo > img{
+        width: 100%;
+    }
+
+    .text-img{
+        font-size: small;
+    }
+    
+    .text-img.h2{
+        font-size: small;
+    }
+
+}

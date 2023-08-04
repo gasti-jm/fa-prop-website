@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/whatsapp.css">
+        <link rel="stylesheet" href="/css/publication/imageviewer.css">
+        <link rel="stylesheet" href="/css/publication/pub-information.css">
+
+        <link rel="icon" href="/img/faicon.ico">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        
+        <script src="/js/responsive-manager.js"></script>
+
+        <title>Publicacion - Fabiana Albanese Propiedades</title>
+    </head>
+
+    <body>
+        <header th:replace="layouts/header :: header"/>
+
+        <section th:if="${inmueble != null and files > 0}">
+            <div class="img-container">
+                <div class="img-viewer-container">
+                    <div class="mySlides" th:each="i : ${#numbers.sequence(1, files)}">
+                        <div class="numbertext"><i class="bi bi-camera"></i> <span th:text="${i}"></span> / <span th:text="${files}"></span></div>
+                        <img th:src="@{'/img/publications/' + ${inmueble.idPublication} + '/' + ${i} +'.jpg'}" alt="img viewer">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+                <div class="row">
+                    <div class="column" th:each="i : ${#numbers.sequence(1, files)}">
+                        <img class="demo cursor" th:src="@{'/img/publications/' + ${inmueble.idPublication} + '/' + ${i} +'.jpg'}" th:attr="onclick='currentSlide(' + ${i} + ')'" alt="img galery">
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-container">
+                <h1 th:text="${inmueble.title}"></h1>
+                <h2 th:text="@{${inmueble.dataLocation.street} + ' ' + ${inmueble.dataLocation.height} + ', ' + ${inmueble.dataLocation.locality} + ' - ' + ${inmueble.dataLocation.province}}"></h2>
+                <h3>USD <span th:text="${#numbers.formatDecimal(inmueble.price, 0, 'POINT', 0, 'COMMA')}"></span></h3>
+
+                <h4>Tipo de publicación: <span th:text="${inmueble.typePub}"></span></h4>
+                <h5>Descripción:</h5>
+                <p th:text="${inmueble.description}"></p>
+
+
+                <i class="bi bi-houses-fill">
+                    Tipo de inmueble: <span th:text="${inmueble.dataProperty.type}"></span>
+                </i>
+
+                <i class="bi bi-door-open" th:if="${inmueble.dataProperty.cantBedrooms > 0}">
+                    <span th:text="${inmueble.dataProperty.cantBedrooms}"></span> habitaciones
+                </i>
+
+                <i class="bi bi-columns" th:if="${inmueble.dataProperty.cantAmbient > 0}">
+                    <span th:text="${inmueble.dataProperty.cantAmbient}"></span> ambientes
+                </i>
+
+                <i class="bi bi-car-front" th:if="${inmueble.dataProperty.cantGarages > 0}">
+                    <span th:text="${inmueble.dataProperty.cantGarages}"></span> cocheras
+                </i>
+
+                <i class="bi bi-droplet" th:if="${inmueble.dataProperty.cantBathrooms > 0}">
+                    <span th:text="${inmueble.dataProperty.cantBathrooms}"></span> baños
+                </i>
+
+                <i class="bi bi-calendar3">
+                    <span th:if="${inmueble.dataProperty.timeAntiquity > 0}" th:text="@{${inmueble.dataProperty.timeAntiquity} + ' años de antigüedad'}"></span>
+                    <span th:if="${inmueble.dataProperty.timeAntiquity == 0}"><b>A estrenar</b></span>
+                </i>
+
+                <i class="bi bi-currency-dollar" th:if="${inmueble.dataProperty.priceExpenses > 0}">
+                    <span th:text="${#numbers.formatDecimal(inmueble.dataProperty.priceExpenses, 0, 'POINT', 0, 'COMMA')}"></span> de expensas
+                </i>
+
+                <i class="bi bi-rulers" th:if="${inmueble.dataProperty.coveredArea > 0}">
+                    <span th:text="${inmueble.dataProperty.coveredArea}"></span> m2 de superficie cubierta
+                </i>
+
+                <i class="bi bi-rulers" th:if="${inmueble.dataProperty.coveredArea > 0}">
+                    <span th:text="${inmueble.dataProperty.coveredArea}"></span> mtr de superficie total
+                </i>
+
+                <div class="buttons">
+                    <a href="tel:+1153790135" class="button-call"><i class="bi bi-telephone-inbound-fill"></i> 11 5379-0135</a>
+                    <a href="https://wa.me/1153790135" target="_blank" class="button-wsp"><i class="bi bi-whatsapp"></i> Envianos un WhatsApp!</a>
+                </div>
+            </div>
+        </section>
+
+        <footer th:replace="layouts/footer :: footer"/>
+        <script src="/js/image-viewer.js"></script>
+    </body>
+</html>

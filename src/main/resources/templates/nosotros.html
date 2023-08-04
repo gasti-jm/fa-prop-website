@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/nosotros_styles.css" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/whatsapp.css">
+
+    <link rel="icon" href="img/faicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <script src="js/responsive-manager.js"></script>
+
+    <title>Nosotros - Fabiana Albanese Propiedades</title>
+  </head>
+
+  <body>
+    <header th:replace="layouts/header :: header"/>
+
+    <section>
+      <h1>Sobre nosotros</h1>
+
+      <div class="container-text">
+        <h1>La empresa: Sus comienzos...</h1>
+        <p>
+          Hace 32 años Hernán Jorge Martinez y
+          Fabiana Alejandra Albanese fundaron la firma M.A. Propiedades con
+          oficina en la calle Ricardo Gutiérrez Nro.1517 1º Piso Oficina 7 de la
+          localidad de Olivos matrimonio que fue incursionándose en el mercado
+          inmobiliario , creciendo día a día y formando una cartera de clientes
+          con un trabajo personalizado y un ambiente familiar. En poco tiempo de
+          tener muestra oficina inmobiliaria en un 1º piso tuvimos la posibilidad
+          de tener nuestra oficina con local a la calle en Juan Bautista Alberdi
+          1599, Olivos, donde trasladamos la cartera de clientes y se fueron
+          sumando muchos mas.
+        </p>
+
+        <h1>Actualmente:</h1>
+        <p>
+          <span class="color-selected">FABIANA ALBANESE PROPIEDADES</span> vuelve a abrir sus puertas de la mano de aquella pareja constituida por Fabiana Albanese y
+          Hernán Martinez integrando en esta nueva etapa a nuestros hijos ya adolecentes, trabajando con los mismos clientes,
+          colegas, agrimensores, contadores, abogados, arquitectos y escribanos de siempre y con las mismas ganas de vender,
+          alquilar y inyectando a la Empresa gente joven con ganas de crecer, sosteniendo nuestra trayectoria intachable en el
+          mercado y el respeto de hace 32 años.
+        </p>
+
+      </div>
+    </section>
+
+    <a th:replace="layouts/whatsapp :: wsp"/>
+    <footer th:replace="layouts/footer :: footer"/>
+  </body>
+</html>

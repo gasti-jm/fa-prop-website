@@ -1,0 +1,105 @@
+.topnav {
+    text-align: center;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.2);
+    z-index: 100;
+}
+  
+.topnav a {
+    display: inline-block;
+    color: #f2f2f2;
+
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+    border-bottom: 3px solid transparent;
+    color: rgb(56, 56, 56);
+}
+
+.topnav a:hover {
+    border-bottom: 3px solid rgb(38, 59, 163);
+    color: rgb(38, 59, 163);
+
+    transition: color 0.5s ease;
+    transition: border-bottom 0.5s ease;
+}
+
+.topnav a.active {
+    border-bottom: 3px solid rgb(38, 59, 163);
+    color: rgb(38, 59, 163);
+}
+
+.topnav .icon {
+    display: none;
+}
+
+.topnav .invisible {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav .invisible {
+        display: inline-block;
+    }
+    
+    .topnav a {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav.responsive {
+        position: sticky;
+        top: 0;
+    }
+
+    .topnav.responsive .icon {
+        background-color: white;
+        color:rgb(38, 59, 163);
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive .invisible {
+        background-color: white;
+        color: black;
+    }
+
+    .topnav.responsive a {
+        display: block;
+        text-align: left;
+        background-color: rgb(38, 59, 163);
+        color: white
+    }
+
+    .topnav.responsive a.active {
+        background-color: rgb(16, 25, 71);
+        border-bottom: 3px solid rgb(16, 25, 71);
+    }
+
+    .topnav.responsive a:hover {
+        background-color: rgb(16, 25, 71);
+        border-bottom: 3px solid rgb(255, 255, 255);
+        transition: background-color 0.5s ease;
+    }
+
+    .topnav.responsive a.invisible:hover {
+        background-color: rgb(255, 255, 255);
+        border-bottom: 3px solid rgb(255, 255, 255);
+    }
+
+    .topnav.responsive a.icon:hover {
+        background-color: rgb(255, 255, 255);
+        border-bottom: 3px solid rgb(255, 255, 255);
+    }
+}

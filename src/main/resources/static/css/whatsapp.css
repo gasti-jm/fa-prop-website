@@ -1,0 +1,91 @@
+@media screen and (min-width: 600px) {
+    .whatsapp_box {
+        text-decoration: none;
+        transition: all 500ms;
+        
+
+        display: flex;
+        position: fixed;
+
+        bottom: 20px;
+        right: 20px;
+
+        width: 50px;
+        height: 50px;
+
+        align-items: center;
+        justify-content: center;
+
+        background-color: rgb(13, 193, 67);
+        border-radius: 50%;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0,0.5);
+    }
+
+    .whatsapp_box:hover {
+        transition: all 500ms ease;
+
+        width: 350px;
+        height: 50px;
+
+        border-radius: 10000px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0,0.5);
+    }
+
+    .whatsapp_box:hover > p{
+        display: block;
+    }
+
+    .whatsapp_box > i {
+        text-decoration: none;
+        color: white;
+        font-size: 25px;
+        font-family: sans-serif;
+    }
+
+    .whatsapp_box p {
+        display: none;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: clip;
+        padding-left: 5px;
+        padding-bottom: 5px;
+        color: white;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .whatsapp_box {
+        text-decoration: none;
+
+        transition: all 0.5s;
+
+        display: flex;
+        position: fixed;
+
+        bottom: 20px;
+        right: 20px;
+
+        width: 50px;
+        height: 50px;
+
+        align-items: center;
+        justify-content: center;
+
+        background-color: rgb(13, 193, 67);
+        border-radius: 50%;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0,0.5);
+    }
+
+    .whatsapp_box i {
+        text-decoration: none;
+        color: white;
+        font-size: 25px;
+        font-family: sans-serif;
+        text-align: center;
+    }
+
+    .whatsapp_box p {
+        display: none;
+    }
+}

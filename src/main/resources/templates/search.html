@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/whatsapp.css">
+        <link rel="stylesheet" href="css/search/card-list.css">
+
+        <link rel="icon" href="img/faicon.ico">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        
+        <script src="js/responsive-manager.js"></script>
+        <title>Busqueda - Fabiana Albanese Propiedades</title>
+    </head>
+
+    <body>
+        <header th:replace="layouts/header :: header"/>
+
+        <section th:if="${inmuebles != null and !inmuebles.empty}">
+            <div th:each="inmueble: ${inmuebles}">
+                <a th:href="@{'/publicacion/' + ${inmueble.idPublication}}" class="card">
+                    <div class="card-orientation">
+                        <div class="img-container">
+                            <img th:src="@{'img/publications/' + ${inmueble.idPublication} + '/1.jpg'}" alt="img carta">
+                        </div>
+
+                        <div class="info">
+                            <h1 th:text="${inmueble.title}"></h1>
+                            <p class="location-color" th:text="@{${inmueble.dataLocation.street} + ' ' + ${inmueble.dataLocation.height} + ', ' + ${inmueble.dataLocation.locality} + ' - ' + ${inmueble.dataLocation.province}}"></p>
+                            <p th:text="${inmueble.description}"></p>
+
+                            <p>
+                                <i class="bi bi-houses-fill">
+                                    Tipo de inmueble: <span th:text="${inmueble.dataProperty.type}"></span>
+                                </i>
+
+                                <i class="bi bi-door-open" th:if="${inmueble.dataProperty.cantBedrooms > 0}">
+                                    <span th:text="${inmueble.dataProperty.cantBedrooms}"></span> habitaciones
+                                </i>
+
+                                <i class="bi bi-columns" th:if="${inmueble.dataProperty.cantAmbient > 0}">
+                                    <span th:text="${inmueble.dataProperty.cantAmbient}"></span> ambientes
+                                </i>
+
+                                <i class="bi bi-car-front" th:if="${inmueble.dataProperty.cantGarages > 0}">
+                                    <span th:text="${inmueble.dataProperty.cantGarages}"></span> cocheras
+                                </i>
+
+                                <i class="bi bi-droplet" th:if="${inmueble.dataProperty.cantBathrooms > 0}">
+                                    <span th:text="${inmueble.dataProperty.cantBathrooms}"></span> baños
+                                </i>
+
+                                <i class="bi bi-calendar3">
+                                    <span th:if="${inmueble.dataProperty.timeAntiquity > 0}" th:text="@{${inmueble.dataProperty.timeAntiquity} + ' años de antigüedad'}"></span>
+                                    <span th:if="${inmueble.dataProperty.timeAntiquity == 0}"><b>A estrenar</b></span>
+                                </i>
+
+                                <i class="bi bi-currency-dollar" th:if="${inmueble.dataProperty.priceExpenses > 0}">
+                                    <span th:text="${#numbers.formatDecimal(inmueble.dataProperty.priceExpenses, 0, 'POINT', 0, 'COMMA')}"></span> de expensas
+                                </i>
+
+                                <i class="bi bi-rulers" th:if="${inmueble.dataProperty.coveredArea > 0}">
+                                    <span th:text="${inmueble.dataProperty.coveredArea}"></span> m2 de superficie cubierta
+                                </i>
+
+                                <i class="bi bi-rulers" th:if="${inmueble.dataProperty.coveredArea > 0}">
+                                    <span th:text="${inmueble.dataProperty.coveredArea}"></span> mtr de superficie total
+                                </i>
+                            </p>
+
+                            <h4 th:text="@{'USD ' + ${#numbers.formatDecimal(inmueble.price, 0, 'POINT', 0, 'COMMA')}}"></h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <a th:replace="layouts/whatsapp :: wsp"/>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>CopyRight © 2023 by Fabiana Albanese Propiedades - C.S.I 43108</p>
+        </footer>
+        
+    </body>
+</html>

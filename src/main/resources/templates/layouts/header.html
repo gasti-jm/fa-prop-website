@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+  <header th:fragment='header' class="topnav" id="nav">
+    <nav>
+      <a th:href="@{/}" class="invisible" onclick="hideNav()">FA Propiedades</a>
+
+      <a th:href="@{/}" onclick="hideNav()">[[#{strInicio}]]</a>
+      <a th:href="@{/alquileres}" onclick="hideNav()">[[#{strAlquileres}]]</a>
+      <a th:href="@{/ventas}" onclick="hideNav()">[[#{strVentas}]]</a>
+      <a th:href="@{/nosotros}" onclick="hideNav()">¿[[#{strQuienesSomos}]]?</a>
+
+      <a href="javascript:void(0);" class="icon" onclick="navResponsive()">
+        <i class="bi bi-list"></i>
+      </a>
+    </nav>
+  </header>
+</body>
+</html>

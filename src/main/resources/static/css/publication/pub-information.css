@@ -1,0 +1,89 @@
+.info-container {
+    width: 40%;
+    margin: 30px;
+}
+
+.info-container > h1 {
+    font-size: 3em;
+    padding-bottom: 5px;
+}
+
+.info-container > h2 {
+    padding-bottom: 20px;
+    color: gray;
+    font-weight: normal;
+}
+
+.info-container > h3 {
+    padding-bottom: 20px;
+    font-size: 2em;
+}
+
+.info-container > h5 {
+    padding-top: 20px;
+    font-size: 1em;
+}
+
+.info-container > p {
+    padding-bottom: 20px;
+}
+
+.info-container > i {
+    display: inline-block;
+    padding: 10px;
+    font-family: sans-serif;
+    font-style: normal;
+}
+
+.buttons {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.button-call {
+    display: block;
+    background-color: black;
+    border-radius: 500px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+.button-wsp {
+    display: block;
+    background-color: rgb(13, 193, 67);
+    border-radius: 500px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    width: 250px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+@media screen and (max-width: 900px) {
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .info-container {
+        width: 90%;
+        margin: 16px;
+    }
+
+    .info-container > h1 {
+        font-size: 1.5em;
+    }
+
+    .info-container > p {
+        font-size: 1em;
+    }
+}
