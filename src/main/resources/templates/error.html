@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="icon" href="/img/faicon.ico">
+
+        <style>
+            h1 {
+                font-size: 3em;
+                text-align: center;
+                padding: 50px;
+                color: rgb(38, 59, 163);
+            }
+
+            p {
+                text-align: center;
+                font-weight: bold;
+            }
+
+            a {
+                text-decoration: underline;
+                color: black;
+            }
+        </style>
+
+        <title>Error</title>
+    </head>
+
+    <body>
+        <h1>ERROR</h1>
+        <p >No se encontro la pagina solicitada, <a th:href="@{/}">debes regresar a la pagina principal</a></p>
+    </body>
+</html>

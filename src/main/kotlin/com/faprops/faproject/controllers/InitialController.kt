@@ -1,10 +1,11 @@
 package com.faprops.faproject.controllers
 
-import com.faprops.faproject.models.Publication
 import com.faprops.faproject.services.PublicationService
 import lombok.extern.slf4j.Slf4j
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.core.io.Resource
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.ui.set
@@ -65,37 +66,23 @@ class InitialController {
     fun publicacionWeb(model: Model, @PathVariable id: Long): String{
         val inmueble = publicationService?.findById(id)
 
-        val files = contFiles("/src/main/resources/static/img/publications/${id}")
+        val files = contFiles("classpath:static/img/publications/${id}/")
 
         if (inmueble != null && files > 0) {
-            model["inmueble"] = inmueble.get()
-            model["files"] = files
-        } else {
-            return "index"
+            if (!inmueble.isEmpty){
+                model["inmueble"] = inmueble.get()
+                model["files"] = files
+            }
         }
 
         return "publication"
     }
 
     fun contFiles(rutaDirectorio: String): Int {
-        val directorio = File(Paths.get("").toAbsolutePath().toString() + "/" + rutaDirectorio)
+        // Utiliza PathMatchingResourcePatternResolver para buscar los archivos en la carpeta
+        val resourceResolver = PathMatchingResourcePatternResolver()
+        val resources: Array<Resource> = resourceResolver.getResources("$rutaDirectorio*")
 
-        if (!directorio.isDirectory) {
-            System.err.println("La ruta proporcionada no es un directorio válido.")
-            return 0
-        }
-
-        val archivos = directorio.listFiles()
-        if (archivos == null) {
-            System.err.println("No se puede acceder al contenido del directorio.")
-            return 0
-        }
-        var cantidadArchivos = 0
-        for (archivo in archivos) {
-            if (archivo.isFile) {
-                cantidadArchivos++
-            }
-        }
-        return cantidadArchivos
+        return resources.size
     }
 }
