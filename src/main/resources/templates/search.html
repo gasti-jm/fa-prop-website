@@ -39,6 +39,10 @@
                                     Tipo de inmueble: <span th:text="${inmueble.dataProperty.type}"></span>
                                 </i>
 
+                                <i class="bi bi-building-fill-up" th:if="${inmueble.dataProperty.cantFloors > 1}">
+                                    <span th:text="${inmueble.dataProperty.cantFloors}"></span> pisos
+                                </i>
+
                                 <i class="bi bi-door-open" th:if="${inmueble.dataProperty.cantBedrooms > 0}">
                                     <span th:text="${inmueble.dataProperty.cantBedrooms}"></span> habitaciones
                                 </i>
@@ -68,8 +72,8 @@
                                     <span th:text="${inmueble.dataProperty.coveredArea}"></span> m2 de superficie cubierta
                                 </i>
 
-                                <i class="bi bi-rulers" th:if="${inmueble.dataProperty.coveredArea > 0}">
-                                    <span th:text="${inmueble.dataProperty.coveredArea}"></span> mtr de superficie total
+                                <i class="bi bi-rulers" th:if="${inmueble.dataProperty.totalArea > 0}">
+                                    <span th:text="${inmueble.dataProperty.totalArea}"></span> mtr de superficie total
                                 </i>
                             </p>
 
