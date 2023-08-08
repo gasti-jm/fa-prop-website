@@ -25,11 +25,6 @@ class PublicationService {
     }
 
     @Transactional(readOnly = true)
-    fun listPublication() : List<Publication>? {
-        return pDAO?.findAll()
-    }
-
-    @Transactional(readOnly = true)
     fun listDestacados() : List<Publication> {
         val pubs = pDAO?.findAll()
         val destacados = ArrayList<Publication>()

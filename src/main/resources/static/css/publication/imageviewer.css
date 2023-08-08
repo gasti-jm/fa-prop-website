@@ -19,15 +19,15 @@ section {
 
 .mySlides {
     display: none;
-    align-items: center; /* Centra verticalmente el contenido dentro del div */
-    justify-content: center; /* Centra horizontalmente el contenido (opcional) */
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100vh;
 }
 
 .mySlides > img {
-    max-height: 100%; /* Ajusta el tamaño de las imágenes */
-    max-width: 100%; /* Ajusta el tamaño de las imágenes */
+    max-height: 100%;
+    max-width: 100%;
 }
 
 /* Add a pointer when hovering over the thumbnail images */
@@ -80,22 +80,24 @@ section {
     left: 5px;
 }
 
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
-/* Six columns side by side */
+
 .column {
-    float: left;
-    width: 200px;
-    margin: 10px;
+    width: 150px;
 }
 
 .column > img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    padding: 5px;
 }
 
 /* Add a transparency effect for thumnbail images */

@@ -35,10 +35,12 @@ section > h1 {
 
     .img-container {
         width: 350px;
+        height: 230px;
     }
 
     .img-container > img {
         display: block;
+        object-fit: cover;
         width: 350px;
         height: 230px;
         border-radius: 10px 0 0 10px;

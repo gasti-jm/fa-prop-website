@@ -45,7 +45,7 @@
             
             <div class="featured-container" th:if="${destacados != null and !destacados.empty}">
                 <a th:href="@{'/publicacion/' + ${destacado.idPublication}}" class="card" th:each="destacado: ${destacados}">
-                    <img th:src="@{'img/publications/' + ${destacado.idPublication} + '/1.jpg'}" alt="destacado" style="width:100%"/>
+                    <img th:src="@{'/img/publications/' + ${destacado.idPublication} + '/1.jpg'}" alt="destacado">
                     <div class="container">
                         <h4><b th:text="${destacado.title}"></b></h4>
                         <p th:text="${destacado.description}"></p>
